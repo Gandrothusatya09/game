@@ -6,7 +6,7 @@ public class moves : MonoBehaviour
 {
     [SerializeField] float moveForce = 100f;
     [SerializeField] float jumpForce = 100f;
-     Rigidbody body;
+    Rigidbody body;
 
     private void Start()
     {
@@ -16,7 +16,16 @@ public class moves : MonoBehaviour
     private void FixedUpdate()
     {
         movementLogic();
+
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            body.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+    
     private void movementLogic()
     {
         float x = Input.GetAxis("Horizontal");
