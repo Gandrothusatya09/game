@@ -515,7 +515,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Renderer: {fileID: 0}
-  droppy: {fileID: 0}
 --- !u!1 &243132278
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,7 +770,7 @@ Transform:
   m_GameObject: {fileID: 264370347}
   serializedVersion: 2
   m_LocalRotation: {x: 0.15552996, y: -0.0452136, z: 0.018073311, w: 0.98663044}
-  m_LocalPosition: {x: -5.3, y: -33.6, z: 47.8}
+  m_LocalPosition: {x: -6.1, y: -33.1, z: 47.4}
   m_LocalScale: {x: 0.36, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3709,7 +3708,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0.5, y: 0.5, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -4.4000006, y: -30.7, z: 0.1954999}
+  m_ConnectedAnchor: {x: 1.4044995, y: -30.7, z: 6}
   serializedVersion: 2
   m_Spring: 50
   m_Damper: 0.2
