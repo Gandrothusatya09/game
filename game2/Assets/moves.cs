@@ -19,7 +19,7 @@ public class moves : MonoBehaviour
 
     }
     private void Update()
-    {
+    {  
         if (Input.GetKeyDown(KeyCode.Space))
         {
             body.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
