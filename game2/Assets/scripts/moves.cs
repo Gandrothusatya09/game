@@ -1,3 +1,5 @@
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +8,12 @@ public class moves : MonoBehaviour
 {
     [SerializeField] float moveForce = 100f;
     [SerializeField] float jumpForce = 100f;
-    Rigidbody body;
+    private Rigidbody rb;
 
     private void Start()
     {
-        body = GetComponent<Rigidbody>();
-        body.freezeRotation = true;
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
     }
     private void FixedUpdate()
     {
@@ -22,7 +24,7 @@ public class moves : MonoBehaviour
     {   
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            body.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
     
@@ -30,8 +32,8 @@ public class moves : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        Vector3 movedirection = (transform.right * x + transform.forward * z);
-        body.AddForce(moveForce * movedirection, ForceMode.Force);
+        Vector3 movepos = new Vector3(x, 0, z).normalized;
+        rb.MovePosition(rb.position + movepos * moveForce * Time.deltaTime);
     }
 
 }
