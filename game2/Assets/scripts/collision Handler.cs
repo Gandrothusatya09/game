@@ -14,6 +14,7 @@ public class collisionHandler : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.enabled = false;    
     }
      void OnCollisionEnter(UnityEngine.Collision collision)
     {
@@ -35,6 +36,7 @@ public class collisionHandler : MonoBehaviour
     {
         playerMovement.enabled = false;
         audioSource.Stop();
+        audioSource.enabled = true;
         audioSource.PlayOneShot(successClip);
         Invoke("LoadNextLevel", levelLoadDelay);
     }
@@ -43,6 +45,7 @@ public class collisionHandler : MonoBehaviour
 
         playerMovement.enabled = false;
         audioSource.Stop();
+
         audioSource.PlayOneShot(deathClip);
         Invoke("ReLoadLevel", levelLoadDelay);
 
