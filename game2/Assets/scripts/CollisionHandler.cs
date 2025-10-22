@@ -11,25 +11,44 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip successClip;
     [SerializeField] AudioClip deathClip;
 
+    [SerializeField] AudioClip coinClip;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>(); 
     }
-     void OnCollisionEnter(UnityEngine.Collision collision)
+    void OnCollisionEnter(UnityEngine.Collision collision)
     {
         switch (collision.gameObject.tag)
         {
             case "Obstacle":
                 Fail();
                 break;
-            case "Finish":
-                success();
-                break;
+
             default:
                 Debug.Log("No Tag");
                 break;
 
         }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Finish":
+                success();
+                break;
+            case "Coins":
+                points();
+                break;
+
+        }
+    }
+    void points()
+    {
+        moves.enabled = true;
+        audioSource.Stop();
+        audioSource.PlayOneShot(coinClip);
     }
     void success()
     {

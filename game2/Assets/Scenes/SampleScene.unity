@@ -621,6 +621,7 @@ MonoBehaviour:
   moves: {fileID: 309498819}
   successClip: {fileID: 8300000, guid: 32396ca5ac96f724f86fa9b61b3e00db, type: 3}
   deathClip: {fileID: 8300000, guid: 7703ed9d5951dfa4bab76d11d79bead6, type: 3}
+  coinClip: {fileID: 8300000, guid: f5fa7ba2a21a2014595e949e3adfcece, type: 3}
 --- !u!114 &309498821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13409,7 +13410,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
